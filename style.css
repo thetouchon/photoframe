@@ -1,0 +1,103 @@
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color-scheme: light;
+  overscroll-behavior: none;
+}
+
+body {
+  font-family: -apple-system, "SF Pro Text", "SF Pro", BlinkMacSystemFont, system-ui, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.screen {
+  min-height: 100vh;
+  min-height: 100dvh;
+  max-width: 402px;
+  margin: 0 auto;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+}
+
+/* Frame: 361 x 494 at 402 wide */
+.frame {
+  position: relative;
+  width: 100%;
+  max-width: 361px;
+  aspect-ratio: 2801 / 3834;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Transparent hole in frame.png: x 110, y 1157, 2580 x 2580 (of 2801 x 3834) */
+.photo-slot {
+  position: absolute;
+  left: 3.9272%;
+  top: 30.1774%;
+  width: 92.1100%;
+  height: 67.2926%;
+  overflow: hidden;
+  background: #fff;
+}
+
+.photo-slot video,
+.photo-slot canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.photo-slot video {
+  object-fit: cover;
+  transform: scaleX(-1);
+}
+
+.frame-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 361px;
+}
+
+/* Button - Liquid Glass - Symbol (Glass Prominent) */
+.btn {
+  flex: 0 1 159px;
+  min-width: 0;
+  height: 64px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 1000px;
+  background: #e8242b;
+  box-shadow: 1.25px 0 0 0 #e6e6e6, -1.25px 0 0 0 #e6e6e6, 0 8px 15px 0 rgba(0, 0, 0, 0.02);
+  color: #fff;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: -0.23px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+.btn:active { transform: scale(0.96); }

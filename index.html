@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+<title>PhotoframeApp</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="screen">
+    <div id="editor" class="frame">
+      <div class="photo-slot">
+        <video id="camera-video" autoplay playsinline muted></video>
+        <canvas id="photo-canvas" hidden></canvas>
+      </div>
+      <img class="frame-image" src="assets/frame.png" alt="Photo frame" draggable="false" />
+    </div>
+
+    <div id="actions-live" class="actions">
+      <button id="btn-snap" class="btn">📷 Snap!</button>
+    </div>
+
+    <div id="actions-captured" class="actions" hidden>
+      <button id="btn-retake" class="btn">Retake</button>
+      <button id="btn-download" class="btn">Download</button>
+    </div>
+
+    <input id="file-input-camera" type="file" accept="image/*" capture="user" hidden />
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
