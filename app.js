@@ -270,8 +270,6 @@
     c.width = w;
     c.height = h;
     const ctx = c.getContext("2d");
-    ctx.fillStyle = "#fff";
-    ctx.fillRect(0, 0, w, h);
 
     const { dw, dh } = drawSize();
     ctx.save();
