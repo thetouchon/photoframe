@@ -7,13 +7,24 @@
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="screen">
+  <main id="screen-select" class="screen">
+    <div class="frame-choices">
+      <button class="frame-choice" data-frame="0" aria-label="Frame 1">
+        <img src="assets/frame-1.png" alt="Frame 1" draggable="false" />
+      </button>
+      <button class="frame-choice" data-frame="1" aria-label="Frame 2">
+        <img src="assets/frame-2.png" alt="Frame 2" draggable="false" />
+      </button>
+    </div>
+  </main>
+
+  <main id="screen-camera" class="screen" hidden>
     <div id="editor" class="frame">
-      <div class="photo-slot">
+      <div id="photo-slot" class="photo-slot">
         <video id="camera-video" autoplay playsinline muted></video>
         <canvas id="photo-canvas" hidden></canvas>
       </div>
-      <img class="frame-image" src="assets/frame.png" alt="Photo frame" draggable="false" />
+      <img id="frame-image" class="frame-image" alt="Photo frame" draggable="false" />
     </div>
 
     <div id="actions-live" class="actions">
@@ -23,6 +34,7 @@
     <div id="actions-captured" class="actions" hidden>
       <button id="btn-retake" class="btn">Retake</button>
       <button id="btn-download" class="btn">Download</button>
+      <button id="btn-other-frame" class="btn">Try Other Frame</button>
     </div>
 
     <input id="file-input-camera" type="file" accept="image/*" capture="user" hidden />
