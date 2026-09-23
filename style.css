@@ -27,6 +27,16 @@ body {
   gap: 28px;
 }
 
+.select-title {
+  margin: 0;
+  color: #000;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 25px;
+  letter-spacing: -0.45px;
+  text-align: center;
+}
+
 .frame-choices {
   display: flex;
   align-items: center;
