@@ -39,6 +39,7 @@ body {
 
 .frame-choices {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 12px;
   width: 100%;
@@ -46,7 +47,7 @@ body {
 }
 
 .frame-choice {
-  flex: 1 1 0;
+  flex: 0 0 calc(50% - 6px);
   min-width: 0;
   padding: 0;
   border: none;

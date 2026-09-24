@@ -5,8 +5,12 @@
   const FRAMES = [
     // square hole spans 110,1157 – 2690,3737
     { src: "assets/frame-1.png", w: 2801, h: 3834, box: { x: 108, y: 1155, w: 2585, h: 2585 } },
-    // irregular torn hole spans 1241,1270 – 2526,2339; padded so soft edges stay covered
-    { src: "assets/frame-2.png", w: 2988, h: 3834, box: { x: 1225, y: 1254, w: 1318, h: 1102 } },
+    // irregular torn hole spans 1141,1248 – 2527,2347
+    { src: "assets/frame-2.png", w: 2988, h: 3834, box: { x: 1139, y: 1246, w: 1391, h: 1104 } },
+    // oval face hole spans 968,1086 – 1354,1628
+    { src: "assets/frame-3.png", w: 2341, h: 2483, box: { x: 966, y: 1084, w: 391, h: 547 } },
+    // feathered oval spans 1260,619 – 1557,1032
+    { src: "assets/frame-4.png", w: 2799, h: 1306, box: { x: 1258, y: 617, w: 302, h: 418 } },
   ];
 
   const PREVIEW_W = 1000;
@@ -296,7 +300,9 @@
   btnRetake.addEventListener("click", showLive);
   btnDownload.addEventListener("click", download);
   btnOtherFrame.addEventListener("click", () => {
-    useFrame((frameIndex + 1) % FRAMES.length);
-    showLive();
+    stopCamera();
+    photo = null;
+    screenCamera.hidden = true;
+    screenSelect.hidden = false;
   });
 })();
