@@ -38,31 +38,34 @@ body {
 }
 
 .frame-choices {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 12px;
   width: 100%;
   max-width: 361px;
 }
 
 .frame-choice {
-  flex: 0 0 calc(50% - 6px);
+  height: 190px;
   min-width: 0;
   padding: 0;
   border: none;
   background: none;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: transform 0.1s ease;
 }
 .frame-choice:active { transform: scale(0.96); }
 .frame-choice img {
   display: block;
-  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
   pointer-events: none;
 }
 
-/* Frame: 361 wide at 402; aspect-ratio and slot geometry are set per frame in app.js */
+/* Frame: 361 wide at 402; aspect-ratio, width cap and slot geometry are set per frame in app.js */
 .frame {
   position: relative;
   width: 100%;
@@ -78,7 +81,6 @@ body {
   background: #fff;
 }
 
-.photo-slot video,
 .photo-slot canvas {
   position: absolute;
   inset: 0;
@@ -87,7 +89,9 @@ body {
   display: block;
 }
 
-.photo-slot video {
+.live-video {
+  position: absolute;
+  display: block;
   object-fit: cover;
   transform: scaleX(-1);
 }

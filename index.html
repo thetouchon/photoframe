@@ -22,15 +22,19 @@
       <button class="frame-choice" data-frame="3" aria-label="Frame 4">
         <img src="assets/frame-4.png" alt="Frame 4" draggable="false" />
       </button>
+      <button class="frame-choice" data-frame="4" aria-label="Frame 5">
+        <img src="assets/frame-5.png" alt="Frame 5" draggable="false" />
+      </button>
+      <button class="frame-choice" data-frame="5" aria-label="Frame 6">
+        <img src="assets/frame-6.png" alt="Frame 6" draggable="false" />
+      </button>
     </div>
   </main>
 
   <main id="screen-camera" class="screen" hidden>
     <div id="editor" class="frame">
-      <div id="photo-slot" class="photo-slot">
-        <video id="camera-video" autoplay playsinline muted></video>
-        <canvas id="photo-canvas" hidden></canvas>
-      </div>
+      <div id="slots"></div>
+      <video id="camera-video" class="live-video" autoplay playsinline muted></video>
       <img id="frame-image" class="frame-image" alt="Photo frame" draggable="false" />
     </div>
 
