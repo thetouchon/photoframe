@@ -46,22 +46,25 @@ body {
 }
 
 .frame-choice {
+  position: relative;
   height: 190px;
   min-width: 0;
   padding: 0;
   border: none;
   background: none;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
   transition: transform 0.1s ease;
 }
 .frame-choice:active { transform: scale(0.96); }
+/* absolute + object-fit: Safari ignores % max-height on images inside <button> */
 .frame-choice img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   display: block;
-  max-width: 100%;
-  max-height: 100%;
   pointer-events: none;
 }
 
